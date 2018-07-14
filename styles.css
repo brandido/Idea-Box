@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "open sans", san-serif;
+}
+
+.top-container {
+  text-align: center;
+  background-color: #E5F3F2;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+h1 {
+  margin: 1em;
+  color: #6D6E71;
+}
+
+.green-idea {
+  color: #00A79D;
+}
+
+.inner-containers-widths {
+  width: 70%;
+  margin: 0.35em;
+}
+
+input {
+  color: #939598;
+}
+
+.save-button {
+  margin-bottom: 1.2em;
+  background-color: #00A79D;
+  color: #FFF; 
+}

@@ -40,3 +40,49 @@ input {
   background-color: #00A79D;
   color: #FFF; 
 }
+
+.bottom-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+li {
+  list-style: none;
+  border-bottom: #D1D3D4 1px solid;
+  padding-bottom: 1em;
+}
+
+h3 {
+  display: inline-block;
+  color: #6D6E71;
+}
+
+.delete-button {
+  background: url('images/delete.svg');
+  border: none;
+  float: right;
+  margin: 2.3em;
+}
+
+p {
+  margin: 0;
+  color: #939598;
+}
+
+.up-vote {
+  background: url('images/upvote.svg');
+  border: none;
+}
+
+.down-vote {
+  background: url('images/downvote.svg');
+  border: none;
+  margin: 0 1em: 
+}
+
+h5 {
+  display: inline-block;
+  margin: 0 1em;
+  color: #6D6E71;
+}

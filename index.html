@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Ideabox</title>
   </head>
   <body>
-    <section>
-      <h1>ideabox</h1>
+    <section class="top-container">
+      <!-- Margin above H1 not working correctly -->
+      <h1><span class="green-idea">idea</span>box</h1>
       <form>
-        <label> Your Name
-          <input type="text" placeholder="Title">
-        </label>
-          <input type="text" placeholder="Body">
-        <button>Save</button>
+          <input class="inner-containers-widths"type="text" placeholder="Title">
+          <input class="inner-containers-widths"type="text" placeholder="Body">
+        <button class="save-button inner-containers-widths" type="submit">Save</button>
       </form>
     </section>
     <section>
@@ -35,5 +35,8 @@
         </li>
       </ul>
     </section>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="path/to/your/jquery.min.js"><\/script>')</script>
+    <script type="text/javascript"> src="script.js"</script>
   </body>
 </html>

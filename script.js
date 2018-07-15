@@ -2,7 +2,10 @@ var titleInput = $('.title-input');
 var bodyInput = $('.body-input');
 var saveBtn = $('.save-button');
 var searchInput = $('.search-input');
-var ul = $('ul')
+var ul = $('ul');
+var li = $('li');
+var deleteBtn = $('.delete-button');
+var bottomContainer = $('.bottom-container');
 
 // bodyInput.on('keyup')
 
@@ -20,7 +23,7 @@ saveBtn.on('click', function(e){
   e.preventDefault();
   addIdeaData();
   console.log('works');
-  ul.append(`<li>
+  ul.prepend(`<li>
           <div>
             <h3>${titleInput.val()}</h3>
             <button class="delete-button"><img></button>
@@ -34,7 +37,12 @@ saveBtn.on('click', function(e){
   bodyInput.val(''); 
 });
 
+ul.on('click', function(e){
+  if (e.target.className === 'delete-button') { 
+   $(e.target).parents('li').remove();
+  }
 
+});
 
 
 

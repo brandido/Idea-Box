@@ -6,6 +6,8 @@ var ul = $('ul');
 var li = $('li');
 var deleteBtn = $('.delete-button');
 var bottomContainer = $('.bottom-container');
+var upVote = $('.up-vote');
+var downVote = $('.down-vote');
 
 // bodyInput.on('keyup')
 
@@ -22,7 +24,6 @@ function addIdeaData() {
 saveBtn.on('click', function(e){
   e.preventDefault();
   addIdeaData();
-  console.log('works');
   ul.prepend(`<li>
           <div>
             <h3>${titleInput.val()}</h3>
@@ -30,20 +31,29 @@ saveBtn.on('click', function(e){
             <p>${bodyInput.val()}</p>
             <button class="up-vote"><img></button>
             <button class="down-vote"><img></button>
-            <h5>quality: swill</h5>
+            <h5 class="quality">quality: swill</h5>
           </div>
         </li>`);
   titleInput.val('');
   bodyInput.val(''); 
 });
 
-ul.on('click', function(e){
+ul.on('click', function(e) {
   if (e.target.className === 'delete-button') { 
    $(e.target).parents('li').remove();
   }
 
 });
 
-
+ul.on('click', function(e) {
+  // $(this).parent().css('background-color', 'red');
+  if(e.target.className === 'up-vote') {
+    $(e.target).nextAll('h5').text('quality: plausible');
+  //   console.log(qualityIdea.text('works')); 
+  //   qualityIdea.text('swill');
+  //   console.log('test');
+  };
+});
+// })
 
 

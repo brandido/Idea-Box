@@ -29,6 +29,7 @@ h1 {
 .inner-containers-widths {
   width: 70%;
   margin: 0.35em;
+  height: 2em;
 }
 
 input {

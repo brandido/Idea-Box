@@ -31,9 +31,17 @@ $( document ).ready(function() {
     })
 });
 
-function displayIdea() {
-
+ul.on('keyup', changeIdea)
+function changeIdea(event) {
+ if (event.keyCode === 13){
+  console.log('works'); 
+  // addIdeaData();
+  // stringify();
+  // parse();
+ }
 }
+
+//Use localStorage.removeItem method to delete idea from local storage
 
 function addIdeaData() {
   ideasArray.push({
@@ -85,7 +93,7 @@ ul.on('click', function(e) {
   // $(this).parent().css('background-color', 'red');
     return (e.target.className === 'up-vote') 
     ? $(e.target).nextAll('h5.quality').text('quality: plausible') : 
-    $(e.target).nextAll('h5.quality').text('quality: test1') ? 
+    $(e.target).nextAll('h5.quality').text('quality: swill') ? 
     (e.target.className === 'up-vote') :
     $(e.target).nextAll('h5.quality').text('quality: swill');
   //   console.log(qualityIdea.text('works')); 

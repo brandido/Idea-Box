@@ -13,6 +13,28 @@ var downVote = $('.down-vote');
 
 var ideasArray = [];
 
+$( document ).ready(function() {
+    var ideas = parse()
+    ideas.forEach(function(idea) {
+      ideasArray.push(idea)
+
+      ul.prepend(`<li>
+          <div>
+            <h3 contenteditable="true">${idea.titleInput}</h3>
+            <button class="delete-button"><img></button>
+            <p contenteditable="true">${idea.bodyInput}</p>
+            <button class="up-vote"><img></button>
+            <button class="down-vote"><img></button>
+            <h5 class="quality">quality: swill</h5>
+          </div>
+        </li>`);
+    })
+});
+
+function displayIdea() {
+
+}
+
 function addIdeaData() {
   ideasArray.push({
     titleInput: titleInput.val(), 
@@ -20,10 +42,17 @@ function addIdeaData() {
   });
 }
 
-function stringify() {
+function stringify(idea) {
   var stringifiedObject = JSON.stringify(ideasArray);
   console.log(stringifiedObject);
   localStorage.setItem("idea", stringifiedObject);
+}
+
+function parse(idea) {
+  var retrievedObject = localStorage.getItem("idea");
+  console.log(retrievedObject)
+  var parsedItem = JSON.parse(retrievedObject);
+  return parsedItem;
 }
 
 
@@ -41,8 +70,8 @@ saveBtn.on('click', function(e){
             <h5 class="quality">quality: swill</h5>
           </div>
         </li>`);
-  // titleInput.val('');
-  // bodyInput.val(''); 
+  titleInput.val('');
+  bodyInput.val(''); 
 });
 
 ul.on('click', function(e) {

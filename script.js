@@ -15,15 +15,22 @@ var ideasArray = [];
 
 function addIdeaData() {
   ideasArray.push({
-    titleInput: titleInput.value, 
-    bodyInput: bodyInput.value,
-    // quality: quality.value
+    titleInput: titleInput.val(), 
+    bodyInput: bodyInput.val(),
   });
 }
+
+function stringify() {
+  var stringifiedObject = JSON.stringify(ideasArray);
+  console.log(stringifiedObject);
+  localStorage.setItem("idea", stringifiedObject);
+}
+
 
 saveBtn.on('click', function(e){
   e.preventDefault();
   addIdeaData();
+  stringify();
   ul.prepend(`<li>
           <div>
             <h3 contenteditable="true">${titleInput.val()}</h3>
@@ -34,8 +41,8 @@ saveBtn.on('click', function(e){
             <h5 class="quality">quality: swill</h5>
           </div>
         </li>`);
-  titleInput.val('');
-  bodyInput.val(''); 
+  // titleInput.val('');
+  // bodyInput.val(''); 
 });
 
 ul.on('click', function(e) {

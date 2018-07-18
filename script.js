@@ -51,7 +51,7 @@ ul.on('click', function(e) {
     ? $(e.target).nextAll('h5.quality').text('quality: plausible') : 
     $(e.target).nextAll('h5.quality').text('quality: test1') ? 
     (e.target.className === 'up-vote') :
-    $(e.target).nextAll('h5.quality').text('quality: test2');
+    $(e.target).nextAll('h5.quality').text('quality: swill');
   //   console.log(qualityIdea.text('works')); 
   //   qualityIdea.text('swill');
   //   console.log('test');

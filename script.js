@@ -47,13 +47,16 @@ ul.on('click', function(e) {
 
 ul.on('click', function(e) {
   // $(this).parent().css('background-color', 'red');
-  if(e.target.className === 'up-vote') {
-    $(e.target).nextAll('h5').text('quality: plausible');
+    return (e.target.className === 'up-vote') 
+    ? $(e.target).nextAll('h5.quality').text('quality: plausible') : 
+    $(e.target).nextAll('h5.quality').text('quality: test1') ? 
+    (e.target.className === 'up-vote') :
+    $(e.target).nextAll('h5.quality').text('quality: test2');
   //   console.log(qualityIdea.text('works')); 
   //   qualityIdea.text('swill');
   //   console.log('test');
-  };
-});
+  });
+
 // })
 
 

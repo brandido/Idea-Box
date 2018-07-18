@@ -26,9 +26,9 @@ saveBtn.on('click', function(e){
   addIdeaData();
   ul.prepend(`<li>
           <div>
-            <h3>${titleInput.val()}</h3>
+            <h3 contenteditable="true">${titleInput.val()}</h3>
             <button class="delete-button"><img></button>
-            <p>${bodyInput.val()}</p>
+            <p contenteditable="true">${bodyInput.val()}</p>
             <button class="up-vote"><img></button>
             <button class="down-vote"><img></button>
             <h5 class="quality">quality: swill</h5>

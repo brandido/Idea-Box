@@ -90,6 +90,10 @@ h3 {
   margin-top: 75px;
 }
 
+.delete-button:hover {
+  background: url('images/delete-hover.svg');
+}
+
 p {
   margin: 0;
   color: #939598;
@@ -104,6 +108,10 @@ p {
   height: 35px;
 }
 
+.up-vote:hover {
+  background: url('images/upvote-hover.svg');
+}
+
 .down-vote {
   background: url('images/downvote.svg');
   background-repeat: no-repeat;
@@ -111,6 +119,10 @@ p {
   width: 35px;
   height: 35px;
   margin-left: 2.5em;
+}
+
+.down-vote:hover {
+  background: url('images/downvote-hover.svg');
 }
 
 h5 {

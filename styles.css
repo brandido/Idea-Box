@@ -45,7 +45,14 @@ input {
 .bottom-container {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+ul {
+  width: 70%;
+  margin: 0;
+  border: 1px solid;
 }
 
 li {

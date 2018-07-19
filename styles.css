@@ -4,9 +4,13 @@
 
 body {
   font-family: "open sans", san-serif;
+  margin: 0;
+  height: 100%
 }
 
 .top-container {
+  overflow: auto;
+  height: 50vh;
   text-align: center;
   background-color: #E5F3F2;
 }

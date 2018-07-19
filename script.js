@@ -8,40 +8,25 @@ var deleteBtn = $('.delete-button');
 var bottomContainer = $('.bottom-container');
 var upVote = $('.up-vote');
 var downVote = $('.down-vote');
-
-// bodyInput.on('keyup')
-
 var ideasArray = [];
 
-$( document ).ready(function() {
-    var ideas = parse()
-    ideas.forEach(function(idea) {
-      ideasArray.push(idea)
-
-      ul.prepend(`<li>
-          <div>
-            <h3 contenteditable="true">${idea.titleInput}</h3>
-            <button class="delete-button"><img></button>
-            <p contenteditable="true">${idea.bodyInput}</p>
-            <button class="up-vote"><img></button>
-            <button class="down-vote"><img></button>
-            <h5 class="quality">quality: swill</h5>
-          </div>
-        </li>`);
-    })
+$(document).ready(function() {
+  var ideas = parse()
+  ideas.forEach(function(idea) {
+    ideasArray.push(idea)
+    ul.prepend(
+      `<li>
+        <div>
+          <h3 contenteditable="true">${idea.titleInput}</h3>
+          <button class="delete-button"><img></button>
+          <p contenteditable="true">${idea.bodyInput}</p>
+          <button class="up-vote"><img></button>
+          <button class="down-vote"><img></button>
+          <h5 class="quality">quality: swill</h5>
+        </div>
+      </li>`);
+  })
 });
-
-ul.on('keyup', changeIdea)
-function changeIdea(event) {
- if (event.keyCode === 13){
-  console.log('works'); 
-  // addIdeaData();
-  // stringify();
-  // parse();
- }
-}
-
-//Use localStorage.removeItem method to delete idea from local storage
 
 function addIdeaData() {
   ideasArray.push({
@@ -49,6 +34,25 @@ function addIdeaData() {
     bodyInput: bodyInput.val(),
   });
 }
+
+saveBtn.on('click', function(e) {
+  e.preventDefault();
+  addIdeaData();
+  stringify();
+  ul.prepend(
+    `<li>
+      <div>
+        <h3 contenteditable="true">${titleInput.val()}</h3>
+        <button class="delete-button"><img></button>
+        <p contenteditable="true">${bodyInput.val()}</p>
+        <button class="up-vote"><img></button>
+        <button class="down-vote"><img></button>
+        <h5 class="quality">quality: swill</h5>
+      </div>
+    </li>`);
+  titleInput.val('');
+  bodyInput.val(''); 
+});
 
 function stringify(idea) {
   var stringifiedObject = JSON.stringify(ideasArray);
@@ -64,23 +68,21 @@ function parse(idea) {
 }
 
 
-saveBtn.on('click', function(e){
-  e.preventDefault();
-  addIdeaData();
-  stringify();
-  ul.prepend(`<li>
-          <div>
-            <h3 contenteditable="true">${titleInput.val()}</h3>
-            <button class="delete-button"><img></button>
-            <p contenteditable="true">${bodyInput.val()}</p>
-            <button class="up-vote"><img></button>
-            <button class="down-vote"><img></button>
-            <h5 class="quality">quality: swill</h5>
-          </div>
-        </li>`);
-  titleInput.val('');
-  bodyInput.val(''); 
-});
+ul.on('keyup', changeIdea)
+function changeIdea(event) {
+ if (event.keyCode === 13){
+  console.log('works'); 
+  // addIdeaData();
+  // stringify();
+  // parse();
+ }
+}
+
+//Use localStorage.removeItem method to delete idea from local storage
+
+
+
+
 
 ul.on('click', function(e) {
   if (e.target.className === 'delete-button') { 

@@ -3,14 +3,14 @@
 }
 
 body {
-  font-family: "open sans", san-serif;
+  font-family: "Open Sans", san-serif;
   margin: 0;
   height: 100%
 }
 
 .top-container {
   overflow: auto;
-  height: 50vh;
+  /*height: 50vh;*/
   text-align: center;
   background-color: #E5F3F2;
 }
@@ -22,7 +22,9 @@ form {
 }
 
 h1 {
-  margin: 1em;
+  font-family: "Roboto", open-sans;
+  font-size: 3.5em;
+  margin: 0.5em;
   color: #6D6E71;
 }
 
@@ -33,7 +35,7 @@ h1 {
 .inner-containers-widths {
   width: 70%;
   margin: 0.35em;
-  height: 2em;
+  font-size: 2.5em;
 }
 
 input {
@@ -72,33 +74,47 @@ li {
 h3 {
   display: inline-block;
   color: #6D6E71;
+  font-size: 3em;
+  margin-bottom: .25em;
 }
+
 
 .delete-button {
   background: url('images/delete.svg');
+  background-repeat: no-repeat;
   border: none;
   float: right;
-  margin: 2.3em;
+  width: 35px;
+  height: 35px;
+  margin-top: 75px;
 }
 
 p {
   margin: 0;
   color: #939598;
+  font-size: 2em;
 }
 
 .up-vote {
   background: url('images/upvote.svg');
+  background-repeat: no-repeat;
   border: none;
+  width: 35px;
+  height: 35px;
 }
 
 .down-vote {
   background: url('images/downvote.svg');
+  background-repeat: no-repeat;
   border: none;
-  margin: 0 1em: 
+  width: 35px;
+  height: 35px;
+  margin-left: 2.5em;
 }
 
 h5 {
   display: inline-block;
   margin: 0 1em;
   color: #6D6E71;
+  font-size: 1.65em;
 }

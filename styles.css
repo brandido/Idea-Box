@@ -45,7 +45,18 @@ input {
 .bottom-container {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.search-input  {
+  margin-top: 2em;
+}
+
+ul {
+  width: 70%;
+  margin: 0;
+  padding: 0;
 }
 
 li {

@@ -28,13 +28,6 @@ $(document).ready(function() {
   })
 });
 
-function addIdeaData() {
-  ideasArray.push({
-    titleInput: titleInput.val(), 
-    bodyInput: bodyInput.val(),
-  });
-}
-
 saveBtn.on('click', function(e) {
   e.preventDefault();
   addIdeaData();
@@ -54,19 +47,17 @@ saveBtn.on('click', function(e) {
   bodyInput.val(''); 
 });
 
-function stringify(idea) {
-  var stringifiedObject = JSON.stringify(ideasArray);
-  console.log(stringifiedObject);
-  localStorage.setItem("idea", stringifiedObject);
-}
+ul.on('click', function(e) {
+  if (e.target.className === 'delete-button') { 
+   $(e.target).parents('li').remove();
+  }
+});
 
-function parse(idea) {
-  var retrievedObject = localStorage.getItem("idea");
-  console.log(retrievedObject)
-  var parsedItem = JSON.parse(retrievedObject);
-  return parsedItem;
-}
-
+ul.on('click', function(e) {
+    return (e.target.className === 'up-vote') 
+    ? $(e.target).nextAll('h5.quality').text('quality: plausible') : 
+    $(e.target).nextAll('h5.quality').text('quality: swill'); 
+  });
 
 ul.on('keyup', changeIdea)
 function changeIdea(event) {
@@ -76,33 +67,23 @@ function changeIdea(event) {
   // stringify();
   // parse();
  }
-}
+};
 
-//Use localStorage.removeItem method to delete idea from local storage
-
-
-
-
-
-ul.on('click', function(e) {
-  if (e.target.className === 'delete-button') { 
-   $(e.target).parents('li').remove();
-  }
-
-});
-
-ul.on('click', function(e) {
-  // $(this).parent().css('background-color', 'red');
-    return (e.target.className === 'up-vote') 
-    ? $(e.target).nextAll('h5.quality').text('quality: plausible') : 
-    $(e.target).nextAll('h5.quality').text('quality: swill') ? 
-    (e.target.className === 'up-vote') :
-    $(e.target).nextAll('h5.quality').text('quality: swill');
-  //   console.log(qualityIdea.text('works')); 
-  //   qualityIdea.text('swill');
-  //   console.log('test');
+function addIdeaData() {
+  ideasArray.push({
+    titleInput: titleInput.val(), 
+    bodyInput: bodyInput.val(),
   });
+};
 
-// })
+function stringify(idea) {
+  var stringifiedObject = JSON.stringify(ideasArray);
+  console.log(stringifiedObject);
+  localStorage.setItem("idea", stringifiedObject);
+};
 
-
+function parse(idea) {
+  var retrievedObject = localStorage.getItem("idea");
+  var parsedItem = JSON.parse(retrievedObject);
+  return parsedItem;
+};
